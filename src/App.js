@@ -25,7 +25,7 @@ class App extends Component {
                   <Link to='/' className='nav-link'>Todos</Link>
                 </li>
                 <li className='nav-item'>
-                  <Link to='/create' className='nav-link'>Create</Link>
+                  <Link to='/create' className='nav-link'>Crear tarea</Link>
                 </li>
               </ul>
             </div>
