@@ -7,7 +7,7 @@ export default class CreateTodo extends Component {
 
     this.onChangeTodoDescription = this.onChangeTodoDescription.bind(this)
     this.onChangeTodoResponsible = this.onChangeTodoResponsible.bind(this)
-    this.onChangeTodoPriotity = this.onChangeTodoPriotity.bind(this)
+    this.onChangeTodoPriority = this.onChangeTodoPriority.bind(this)
     this.onSubmit = this.onSubmit.bind(this)
 
     this.state = {
@@ -30,7 +30,7 @@ export default class CreateTodo extends Component {
     })
   }
 
-  onChangeTodoPriotity (e) {
+  onChangeTodoPriority (e) {
     this.setState({
       todo_priority: e.target.value
     })
@@ -91,7 +91,7 @@ export default class CreateTodo extends Component {
                 id='prorityBaja'
                 value='Baja'
                 checked={this.state.todo_priority === 'Baja'}
-                onChange={this.onChangeTodoPriotity}
+                onChange={this.onChangeTodoPriority}
               />
               <label className='form-check-label'>Baja</label>
             </div>
@@ -102,7 +102,7 @@ export default class CreateTodo extends Component {
                 id='prorityMedia'
                 value='Media'
                 checked={this.state.todo_priority === 'Media'}
-                onChange={this.onChangeTodoPriotity}
+                onChange={this.onChangeTodoPriority}
               />
               <label className='form-check-label'>Media</label>
             </div>
@@ -113,7 +113,7 @@ export default class CreateTodo extends Component {
                 id='prorityAlta'
                 value='Alta'
                 checked={this.state.todo_priority === 'Alta'}
-                onChange={this.onChangeTodoPriotity}
+                onChange={this.onChangeTodoPriority}
               />
               <label className='form-check-label'>Alta</label>
             </div>
