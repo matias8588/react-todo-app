@@ -11,7 +11,9 @@ let Todo = require('./todo.model')
 app.use(cors())
 app.use(bodyParser.json())
 
-mongoose.connect(URI, { useNewUrlParser: true })
+mongoose.connect(URI, {
+  useNewUrlParser: true
+})
 const connection = mongoose.connection
 
 connection.once('open', function () {
@@ -43,14 +45,16 @@ todoRoutes.route('/add').post(function (req, res) {
   let todo = new Todo(req.body)
   todo.save()
     .then(todo => {
-      res.status(200).json({ 'todo': 'Tarea agregada correctamente' })
+      res.status(200).json({
+        'todo': 'Tarea agregada correctamente'
+      })
     })
     .catch(err => {
       res.status(400).send('Error al agregar tarea', err)
     })
 })
 
-todoRoutes.route('/update:id').post(function (req, res) {
+todoRoutes.route('/edit/:id').post(function (req, res) {
   let id = req.params.id
   Todo.findById(id, function (err, todo) {
     if (!todo) {
